@@ -1,3 +1,12 @@
+/* RESET & BASE STYLES */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
 :root {
 	--primary-color: #0891b2;
 	--text-dark: #1f2937;
@@ -18,6 +27,7 @@ h1,
 h2,
 h3 {
 	font-family: var(--font-heading);
+	font-weight: 400;
 }
 
 img {
@@ -36,12 +46,14 @@ a {
 	margin: 0 auto;
 }
 
+/* HERO / ABOUT SECTION */
 .hero {
 	position: relative;
 	padding: 3rem 0;
 	overflow: hidden;
 }
 
+/* Angled background shape */
 .hero::before {
 	content: '';
 	position: absolute;
@@ -69,7 +81,7 @@ a {
 
 .portrait-wrapper img {
 	width: 100%;
-	height: 300px;
+	height: 380px;
 	object-fit: cover;
 }
 
@@ -89,6 +101,12 @@ a {
 	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
+.about-card h2 {
+	font-size: 2rem;
+	margin-bottom: 1rem;
+	text-align: center;
+}
+
 .about-card p {
 	color: var(--text-muted);
 	margin-bottom: 1.5rem;
@@ -101,6 +119,7 @@ a {
 	font-size: 1.5rem;
 }
 
+/* PROJECTS GRID */
 .projects {
 	padding: 4rem 0;
 }
@@ -113,22 +132,23 @@ a {
 
 .project-grid {
 	display: grid;
+	/* Automatically adjusts columns from 1 (mobile) up to 3 (desktop) */
 	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 	gap: 2rem;
 }
 
 .project-card {
-	display: flex;
-	flex-direction: column;
 	background: white;
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+	display: flex;
+	flex-direction: column;
 }
 
 .project-screenshot {
 	height: 200px;
 	color: white;
 	font-family: var(--font-heading);
-	font-size: 1.76rem;
+	font-size: 1.75rem;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -160,7 +180,7 @@ a {
 	font-size: 0.95rem;
 }
 
-/* Footer / Contact Info */
+/* FOOTER / CONTACT */
 .contact {
 	background-color: var(--primary-color);
 	color: white;
@@ -190,6 +210,7 @@ a {
 	padding-bottom: 2rem;
 }
 
+/* TABLET & DESKTOP BREAKPOINT */
 @media (min-width: 768px) {
 	.hero-content {
 		flex-direction: row;
